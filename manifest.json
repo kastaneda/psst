@@ -1,0 +1,11 @@
+{
+  "name": "Perfect static site template",
+  "short_name": "Psst!",
+  "icons": [
+    {
+      "src": "/google-touch-icon.png",
+      "sizes": "512x512"
+    }
+  ],
+  "display": "fullscreen"
+}
