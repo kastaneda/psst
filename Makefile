@@ -25,4 +25,4 @@ google-touch-icon.png: favicon.svg
 clean:
 	rm -fv $(ASSETS)
 
-.PHONY: build up assets
+.PHONY: build up assets clean
