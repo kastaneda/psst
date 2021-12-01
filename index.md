@@ -42,6 +42,8 @@ to add the site to the desktop.
 
  - Plain white background added
 
+Tested on Safari 9 on antique iPad 2. It works.
+
 
 ### No web manifest
 
@@ -49,6 +51,12 @@ Web manifest is [considered harmful][3] for non-PWA multi-page sites¸
 so it is not included for now.
 
 Instead of it, there is [standard][4] meta tag `application-name`.
+It is supported by mobile Chrome.
+
+Known imperfections:
+
+ - Mobile Firefox ignores `application-name` meta tag (and use no icon)
+ - Safari 9 ignores `application-name` meta tag
 
 (Research in progress…)
 
