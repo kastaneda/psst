@@ -22,6 +22,7 @@ All other formats is generated from the SVG source.
 
  - Very basic image to start ;)
  - Sample media query for dark theme included
+ - I prefer to add `width` and `height` to root `<svg>` tag
 
 
 ### Legacy `favicon.ico` (32×32)
