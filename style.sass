@@ -6,3 +6,24 @@ body
   margin: 0 auto
   padding: 1em
   font: 120% / 1.5 serif
+  color: #666
+  background: #eee
+
+code
+  font-family: monospace
+  color: #d05
+
+a
+  color: #246
+  &:visited
+    color: #604
+
+@media (prefers-color-scheme: dark)
+  body
+    color: #ccc
+    background: #111
+
+  a
+    color: #8cf
+    &:visited
+      color: #f8c
