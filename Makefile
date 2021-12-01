@@ -7,7 +7,7 @@ up: $(ASSETS)
 	jekyll build --drafts --watch
 
 favicon.ico: favicon.svg
-	rsvg-convert $< -w 32 -h 32 | convert - $@
+	rsvg-convert $< -w 32 -h 32 | convert - gif:- | convert - $@
 
 apple-touch-icon.png: favicon.svg
 	rsvg-convert $< -w 180 -h 180 \
