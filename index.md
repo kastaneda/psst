@@ -45,7 +45,12 @@ to add the site to the desktop.
 
 ### No web manifest
 
-Web manifest is [considered harmful][3]¸ so it is not included for now.
+Web manifest is [considered harmful][3] for non-PWA multi-page sites¸
+so it is not included for now.
+
+Instead of it, there is [standard][4] meta tag `application-name`.
+
+(Research in progress…)
 
 
 Mandatory section
@@ -57,3 +62,4 @@ Mandatory section
 [1]: https://css-tricks.com/favicons-how-to-make-sure-browsers-only-download-the-svg-version/
 [2]: http://test.de.co.ua/2021/11/08/favicon-research.html
 [3]: https://twitter.com/kastaneda/status/1465484668799754245
+[4]: https://html.spec.whatwg.org/multipage/semantics.html#standard-metadata-names
