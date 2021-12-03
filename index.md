@@ -48,7 +48,7 @@ Tested on Safari 9 on antique iPad 2. It works.
 
 ### No web manifest
 
-Web manifest is [considered harmful][3] for non-PWA multi-page sites¸
+Web manifest is [considered harmful][3] for non-PWA multi-page sites,
 so it is not included for now.
 
 Instead of it, there is [standard][4] meta tag `application-name`.
