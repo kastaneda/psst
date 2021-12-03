@@ -1,4 +1,4 @@
-ASSETS := favicon.ico apple-touch-icon.png
+ASSETS := favicon.ico apple-touch-icon.png opengraph.png
 
 build: $(ASSETS)
 	jekyll build
@@ -12,6 +12,11 @@ favicon.ico: favicon.svg
 apple-touch-icon.png: favicon.svg
 	rsvg-convert $< -w 180 -h 180 \
 		| convert - -background "#fff" -alpha remove -alpha off $@
+	optipng $@
+	advpng -z4 $@
+
+%.png: %.svg
+	rsvg-convert $< > $@
 	optipng $@
 	advpng -z4 $@
 

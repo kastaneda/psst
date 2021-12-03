@@ -1,6 +1,12 @@
 ---
-exclude:
-- README.md
-- Makefile
+url: https://psst.de.co.ua
+baseurl: ''
 
-appname: 'Psst!'
+exclude:
+- Makefile
+- README.md
+- CNAME
+- opengraph.svg
+
+title: Psst!
+description: Playground for OpenGraph and favicons.
