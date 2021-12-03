@@ -46,7 +46,8 @@ to add the site to the desktop.
 Tested on Safari 9 on antique iPad 2.
 
 
-### No web manifest
+Manifest: no web manifest
+-------------------------
 
 Web manifest is [considered harmful][3] for non-PWA multi-page sites,
 so it is not included for now.
@@ -59,13 +60,15 @@ Known imperfections:
  - Mobile Firefox ignores `application-name` meta tag (and use no icon)
  - Safari 9 ignores `application-name` meta tag
 
+Okay, I will try meta `apple-mobile-web-app-title`.
+
 (Research in progress…)
 
 
 OpenGraph
 ---------
 
-There is set of OpenGraph tags. Nothing special.
+There is set of OpenGraph tags. Nothing special. but it looks nice.
 
 
 Mandatory section
