@@ -11,7 +11,7 @@ This is a small template for a small static site.
 Proper favicon
 --------------
 
-Indeed, this site is made to play with 'favicons'.
+Indeed, this site is made to play with 'favicons'. This is damn hard.
 
 
 ### Single source of trurh: `favicon.svg`
@@ -29,8 +29,8 @@ All other formats is generated from the SVG source.
 
 It is present in the site's root, but _not_ linked. Why?
 
- - Anyway, some UAs (like IE6) blindly try to load `/favicon.ico`
- - But that way you don't have to [override Chome bugs][1]
+ - Some UAs (like IE6) blindly try to load `/favicon.ico`
+ - In that case you don't have to [override Chome bugs][1]
 
 More research needed.
 
@@ -43,7 +43,7 @@ to add the site to the desktop.
 
  - Plain white background added
 
-Tested on Safari 9 on antique iPad 2. It works.
+Tested on Safari 9 on antique iPad 2.
 
 
 ### No web manifest
@@ -60,6 +60,12 @@ Known imperfections:
  - Safari 9 ignores `application-name` meta tag
 
 (Research in progress…)
+
+
+OpenGraph
+---------
+
+There is set of OpenGraph tags. Nothing special.
 
 
 Mandatory section
