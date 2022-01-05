@@ -27,17 +27,17 @@ All other formats is generated from the SVG source.
 
 ### Legacy `favicon.ico` (32×32)
 
-It is present in the site's root, but _not_ linked. Why?
+It is present in the site's root, ~~but _not_ linked~~. Why?
 
  - Some UAs (like IE6) blindly try to load `/favicon.ico`
  - In that case you don't have to [override Chome bugs][1]
 
-More research needed.
+More research needed. Upd.: oh damn, maybe I indeed need the link.
 
 
 ### Apple touch icon (180×180)
 
-It also is present on predefined place, but _not_ linked.
+It also is present on predefined place, ~~but _not_ linked~~.
 Safari will [try to load it anyway][2], when user attempts
 to add the site to the desktop.
 
@@ -68,13 +68,17 @@ Okay, I will try meta `apple-mobile-web-app-title`.
 OpenGraph
 ---------
 
-There is set of OpenGraph tags. Nothing special. but it looks nice.
+There is set of OpenGraph tags. Nothing special, but it looks nice.
 
 
 Mandatory section
 -----------------
 
 <span lang="la">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+
+[Valid HTML](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpsst.de.co.ua%2F)
+
+[Valid CSS](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fpsst.de.co.ua%2Fstyle.css)
 
 
 [1]: https://css-tricks.com/favicons-how-to-make-sure-browsers-only-download-the-svg-version/
