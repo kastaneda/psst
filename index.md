@@ -76,7 +76,14 @@ There is set of OpenGraph tags. Nothing special, but it works. Unfortunately, SV
 
 How it works?
 
-### Twitter
+
+### Facebook
+
+<img src="screenshots/facebook_light.png" alt="Screenshot: this site in the Sharing Debugger">
+
+(That was done not in the real Facebook, only the [Sharing Debugger][5].)
+
+### Twitter (DM)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="screenshots/twitter_dark.png">
@@ -84,7 +91,7 @@ How it works?
   <img src="screenshots/twitter_light.png" alt="Screenshot: link to this site in Twitter">
 </picture>
 
-### Skype
+### Skype chat
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="screenshots/skype_dark.png">
@@ -92,7 +99,7 @@ How it works?
   <img src="screenshots/skype_light.png" alt="Screenshot: link to this site in Skype">
 </picture>
 
-Well. More or less, it's usable.
+Well. It works.
 
 
 Mandatory section
@@ -108,7 +115,8 @@ P.S.
 
 [Valid CSS](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fpsst.de.co.ua%2Fstyle.css)
 
-
+[1]: https://css-tricks.com/favicons-how-to-make-sure-browsers-only-download-the-svg-version/
 [2]: http://test.de.co.ua/2021/11/08/favicon-research.html
 [3]: https://twitter.com/kastaneda/status/1465484668799754245
 [4]: https://html.spec.whatwg.org/multipage/semantics.html#standard-metadata-names
+[5]: https://developers.facebook.com/tools/debug/
