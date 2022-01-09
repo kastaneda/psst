@@ -54,9 +54,9 @@ Why it is not linked?
 Manifest: no web manifest
 -------------------------
 
-Web manifest is [considered harmful][3] for non-PWA multi-page sites, so it is not included.
+Web manifest is [considered harmful][3] for non-PWA multi-page sites, so it's not included.
 
-Instead of it, there is abit outdated, but [standard][4] meta tag `application-name`.
+Instead of it, there is a bit outdated, but [standard][4] meta tag `application-name`.
 It is supported by mobile Chrome.
 
 Known imperfections:
@@ -74,7 +74,25 @@ OpenGraph
 
 There is set of OpenGraph tags. Nothing special, but it works. Unfortunately, SVG is not supported by OpenGraph, so [there is PNG version](opengraph.png) made of SVG.
 
-_(Research in progress…)_
+How it works?
+
+### Twitter
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="screenshots/twitter_dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="screenshots/twitter_light.png">
+  <img src="screenshots/twitter_light.png" alt="Screenshot: link to this site in Twitter">
+</picture>
+
+### Skype
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="screenshots/skype_dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="screenshots/skype_light.png">
+  <img src="screenshots/skype_light.png" alt="Screenshot: link to this site in Skype">
+</picture>
+
+Well. More or less, it's usable.
 
 
 Mandatory section
