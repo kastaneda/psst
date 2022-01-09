@@ -41,14 +41,14 @@ Why it is still present?
 ### Apple touch icon (180×180)
 
 It also is present on predefined place `/apple-touch-icon.png`, but _not_ linked.
-Safari will [try to load it anyway][2] when needed.
 
  - Plain white background added
  - Tested on Safari 9 on antique iPad 2
 
 Why it is not linked?
 
- - In Firefox, if there is those link, the unholy goddamned `FaviconLoader.jsm` will mindlessly try to load your favicon and Apple touch icon, _both_, even if it is not really needed
+ - Safari will [try to load it anyway][2] when needed
+ - In Firefox, if all that links is present, the unholy goddamned `FaviconLoader.jsm` will mindlessly try to load your favicon and Apple touch icon _both_, even if it is not really needed
 
 
 Manifest: no web manifest

@@ -1,3 +1,5 @@
+# apt install make jekyll imagemagick librsvg2-bin optipng advancecomp
+
 ASSETS := favicon.ico apple-touch-icon.png opengraph.png
 
 build: $(ASSETS)
