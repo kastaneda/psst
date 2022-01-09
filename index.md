@@ -37,6 +37,7 @@ Why it is still present?
 
  - Some stupid user agents will try to load path `/favicon.ico` anyway, even if there is no such link on page, so let's just decrease number of 404s in web server logs
 
+_(Research in progress…)_
 
 ### Apple touch icon (180×180)
 
@@ -49,6 +50,10 @@ Why it is not linked?
 
  - Safari will [try to load it anyway][2] when needed
  - In Firefox, if all that links is present, the unholy goddamned `FaviconLoader.jsm` will mindlessly try to load your favicon and Apple touch icon _both_, even if it is not really needed
+
+### Apple mask icon
+
+Damn. I need to test it somewhere.
 
 
 Manifest: no web manifest
