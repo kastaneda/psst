@@ -51,10 +51,6 @@ Why it is not linked?
  - Safari will [try to load it anyway][2] when needed
  - In Firefox, if all that links is present, the unholy goddamned `FaviconLoader.jsm` will mindlessly try to load your favicon and Apple touch icon _both_, even if it is not really needed
 
-### Apple mask icon
-
-Damn. I need to test it somewhere.
-
 
 Manifest: no web manifest
 -------------------------
@@ -68,8 +64,6 @@ Known imperfections:
 
  - Mobile Firefox ignores `application-name` meta tag (and even did not use icon)
  - Safari 9 ignores `application-name` meta tag
-
-Okay, maybe I will try meta `apple-mobile-web-app-title`.
 
 _(Research in progress…)_
 
