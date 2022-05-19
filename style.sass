@@ -1,10 +1,17 @@
 ---
 ---
 
+html
+  background: #eee url(noise-texture.png) fixed
+  margin: 0
+  padding: 0
+  height: 100%
+
 body
   max-width: 45em
+  min-height: calc(100% - 2em)
   margin: 0 auto
-  padding: 1em
+  padding: .75em 2em
   font: 125% / 1.8 'Droid Serif', 'Sitka Text', 'Georgia', serif
   color: #666
   background: #eee
@@ -23,11 +30,19 @@ img, picture
   height: auto
 
 @media (prefers-color-scheme: dark)
-  body
+  html, body
+    background-color: #130811
     color: #ccc
-    background: #130811
 
   a
     color: #8cf
     &:visited
       color: #f8c
+
+@media (max-width: 36rem)
+  html
+    background-image: none
+
+  body
+    min-height: calc(100% - 1em)
+    padding: .25em .5em
