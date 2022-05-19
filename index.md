@@ -100,6 +100,8 @@ How it works?
 
 Well. It works.
 
+Note: by using media queries, one can easily choose dark and light versions of screenshots, to conform overall page style. Even SVG icon can have media queries. But not OpenGraph.
+
 
 Mandatory section
 -----------------
