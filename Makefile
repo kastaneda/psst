@@ -1,19 +1,54 @@
+# To install the build environment:
 # apt install make jekyll imagemagick librsvg2-bin optipng advancecomp
 
+ROOT := $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
+
+-include .env
+
+JEKYLL ?= jekyll
+HTMLPROOFER ?= htmlproofer
+
+# To run dockerized version of build tools, '.env' file should be like:
+#
+# JEKYLL = docker run --rm -v $(ROOT):/srv/jekyll jekyll/jekyll jekyll
+# HTMLPROOFER = docker run --rm -v $(ROOT):/src klakegg/html-proofer
+
+DOMAIN := psst.de.co.ua
 ASSETS := favicon.ico apple-touch-icon.png opengraph.png
+TEXTFILES := '.*\.\(html\|css\|js\|txt\|xml\|ico\)$$'
+
+all: build test-local
 
 build: $(ASSETS)
-	jekyll build
+	$(JEKYLL) build
 
 up: $(ASSETS)
-	jekyll build --drafts --watch
+	$(JEKYLL) build --drafts --watch
+
+test-local: build
+	$(HTMLPROOFER) ./_site \
+		--disable-external \
+		--internal-domains https://$(DOMAIN) \
+		--check-html \
+		--check-favicon \
+		--check-opengraph \
+		--report-missing-names
+
+test-external: build
+	$(HTMLPROOFER) ./_site \
+		--internal-domains https://$(DOMAIN) \
+		--check-html \
+		--check-favicon \
+		--check-opengraph \
+		--report-missing-names \
+		--enforce_https \
+		--only-4xx
 
 favicon.ico: favicon.svg
 	rsvg-convert $< -w 32 -h 32 | convert - gif:- | convert - $@
 
 apple-touch-icon.png: favicon.svg
-	rsvg-convert $< -w 180 -h 180 \
-		| convert - -background "#fff" -alpha remove -alpha off $@
+	rsvg-convert $< -w 180 -h 180 | convert - -background "#fff" -alpha remove -alpha off $@
 	optipng $@
 	advpng -z4 $@
 
@@ -24,5 +59,16 @@ apple-touch-icon.png: favicon.svg
 
 clean:
 	rm -fv $(ASSETS)
+	rf -frv _site/
+	rm $(DOMAIN).tar.gz
 
-.PHONY: build up clean
+compress:
+	find _site -regex $(TEXTFILES) | xargs zopfli --i20
+	find _site -regex $(TEXTFILES) | xargs brotli -fZ
+
+package: build compress $(DOMAIN).tar.gz
+
+$(DOMAIN).tar.gz:
+	tar zcf $@ -C _site/ .
+
+.PHONY: all build up test-local test-external clean compress package $(DOMAIN).tar.gz
