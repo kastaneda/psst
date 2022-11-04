@@ -59,8 +59,8 @@ apple-touch-icon.png: favicon.svg
 
 clean:
 	rm -fv $(ASSETS)
-	rf -frv _site/
-	rm $(DOMAIN).tar.gz
+	rm -frv _site/
+	rm -fv $(DOMAIN).tar.gz
 
 compress:
 	find _site -regex $(TEXTFILES) | xargs zopfli --i20
