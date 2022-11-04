@@ -17,32 +17,7 @@ DOMAIN := psst.de.co.ua
 ASSETS := favicon.ico apple-touch-icon.png opengraph.png
 TEXTFILES := '.*\.\(html\|css\|js\|txt\|xml\|ico\)$$'
 
-all: build test-local
-
-build: $(ASSETS)
-	$(JEKYLL) build
-
-up: $(ASSETS)
-	$(JEKYLL) build --drafts --watch
-
-test-local: build
-	$(HTMLPROOFER) ./_site \
-		--disable-external \
-		--internal-domains https://$(DOMAIN) \
-		--check-html \
-		--check-favicon \
-		--check-opengraph \
-		--report-missing-names
-
-test-external: build
-	$(HTMLPROOFER) ./_site \
-		--internal-domains https://$(DOMAIN) \
-		--check-html \
-		--check-favicon \
-		--check-opengraph \
-		--report-missing-names \
-		--enforce_https \
-		--only-4xx
+all: build test
 
 favicon.ico: favicon.svg
 	rsvg-convert $< -w 32 -h 32 | convert - gif:- | convert - $@
@@ -56,6 +31,44 @@ apple-touch-icon.png: favicon.svg
 	rsvg-convert $< > $@
 	optipng $@
 	advpng -z4 $@
+
+build: $(ASSETS)
+	$(JEKYLL) build
+
+up: $(ASSETS)
+	$(JEKYLL) build --drafts --watch
+
+test: test-local
+
+test-local: build
+	$(HTMLPROOFER) ./_site \
+		--disable-external \
+		--internal-domains https://$(DOMAIN) \
+		--check-html \
+		--check-favicon \
+		--check-opengraph \
+		--report-missing-names \
+		--report-missing-doctype \
+		--report-invalid-tags \
+		--report-eof-tags \
+		--report-mismatched-tags \
+		--check-sri \
+		--enforce_https
+
+test-external: build
+	$(HTMLPROOFER) ./_site \
+		--internal-domains https://$(DOMAIN) \
+		--check-html \
+		--check-favicon \
+		--check-opengraph \
+		--report-missing-names \
+		--report-missing-doctype \
+		--report-invalid-tags \
+		--report-eof-tags \
+		--report-mismatched-tags \
+		--check-sri \
+		--enforce_https \
+		--only-4xx
 
 clean:
 	rm -fv $(ASSETS)
@@ -71,4 +84,4 @@ package: build compress $(DOMAIN).tar.gz
 $(DOMAIN).tar.gz:
 	tar zcf $@ -C _site/ .
 
-.PHONY: all build up test-local test-external clean compress package $(DOMAIN).tar.gz
+.PHONY: all build up test test-local test-external clean compress package $(DOMAIN).tar.gz
