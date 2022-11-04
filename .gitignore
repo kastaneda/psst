@@ -1,4 +1,4 @@
-_site
-.env
-*.tar.gz
-.jekyll-cache/
+/_site/
+/.env
+/*.tar.gz
+/.jekyll-cache/
