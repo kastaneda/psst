@@ -123,7 +123,7 @@ P.P.S.
 Indeed, _indeed_, this site is also a placeholder for a [Makefile][6].
 
 [1]: https://css-tricks.com/favicons-how-to-make-sure-browsers-only-download-the-svg-version/
-[2]: http://test.de.co.ua/2021/11/08/favicon-research.html
+[2]: https://test.de.co.ua/2021/11/08/favicon-research.html
 [3]: https://twitter.com/kastaneda/status/1465484668799754245
 [4]: https://html.spec.whatwg.org/multipage/semantics.html#standard-metadata-names
 [5]: https://developers.facebook.com/tools/debug/
